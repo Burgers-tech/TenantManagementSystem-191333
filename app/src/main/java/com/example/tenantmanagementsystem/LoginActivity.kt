@@ -31,6 +31,7 @@ class LoginActivity : AppCompatActivity() {
             }
 
             val intent = Intent(this, MainActivity::class.java)
+            intent.putExtra("EMAIL", email)   // NEW: send the email along
             startActivity(intent)
             finish()
         }
@@ -40,7 +41,6 @@ class LoginActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        // NEW: implicit Intent - ask any browser to open a web page
         binding.helpTextView.setOnClickListener {
             val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://www.strathmore.edu"))
             startActivity(intent)
